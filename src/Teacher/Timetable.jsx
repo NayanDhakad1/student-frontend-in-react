@@ -8,7 +8,7 @@ const Timetable = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:8080/timetable/add",timetable)
+    axios.get("http://localhost:8081/timetable/add",timetable)
       .then((res) => {
         setTimetable(res.data);
       })

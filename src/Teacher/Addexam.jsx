@@ -24,7 +24,7 @@ const AddExam = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:8080/exam/add", exam)
+    axios.post("http://localhost:8081/exam/add", exam)
       .then(() => {
         alert("Exam Added Successfully");
         navigate("/teacher-dashboard");

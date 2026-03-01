@@ -9,7 +9,7 @@ const View = () => {
 
   useEffect(() => {
     axios
-      axios.get(`http://localhost:8080/student/id/${id}`)
+      axios.get(`http://localhost:8081/student/id/${id}`)
 
       .then((res) => {
         setStudent(res.data);

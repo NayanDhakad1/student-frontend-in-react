@@ -25,7 +25,7 @@ const Registeacher = () => {
     e.preventDefault();
 
     try {
-     await axios.post("http://localhost:8080/register/add", teacher);
+     await axios.post("http://localhost:8081/register/add", teacher);
 
       alert("Teacher Created Successfully");
 

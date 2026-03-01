@@ -25,7 +25,7 @@ const AddAttendance = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:8080/attendance/add", attendance)
+    axios.post("http://localhost:8081/attendance/add", attendance)
       .then(() => {
         alert("Attendance Marked Successfully");
         navigate("/teacher-dashboard");
