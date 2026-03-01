@@ -1,0 +1,32 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Rahul Sharma",
+      "mobileno": "9876543210",
+      "course": "BCA",
+      "branch": "Computer Science"
+    },
+    {
+      "id": 2,
+      "name": "Priya Verma",
+      "mobileno": "9123456780",
+      "course": "BBA",
+      "branch": "Management"
+    },
+    {
+      "id": 3,
+      "name": "Aman Gupta",
+      "mobileno": "9090909090",
+      "course": "BTech",
+      "branch": "Mechanical"
+    },
+    {
+      "id": 4,
+      "name": "Neha Singh",
+      "mobileno": "8000000001",
+      "course": "MBA",
+      "branch": "Finance"
+    }
+  ]
+}

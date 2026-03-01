@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Reset ===== */
+body {
+  padding-top: 70px;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Navbar Container ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;      /* important */
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(to right, #0f172a, #111827);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  color: white;
+  z-index: 1000;
+}
+
+/* ===== Logo ===== */
+.navbar-logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #4e73df;
+  letter-spacing: 1px;
+}
+
+/* ===== Links Container ===== */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* ===== Nav Links ===== */
+.navbar-links a {
+  text-decoration: none;
+  color: #f3f4f6;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #1cc88a;
+}
+
+/* ===== Active Link ===== */
+.navbar-links a.active {
+  color: #1cc88a;
+  border-bottom: 2px solid #1cc88a;
+  padding-bottom: 4px;
+}
+
+/* ===== Logout Button ===== */
+.logout-btn {
+  padding: 8px 18px;
+  background-color: #e74a3b;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* ===== Body spacing because navbar fixed ===== */
+.main-content {
+  padding-top: 90px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+}
