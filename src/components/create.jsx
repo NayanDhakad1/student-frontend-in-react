@@ -15,7 +15,7 @@ import { useNavigate, Link } from "react-router-dom";
     e.preventDefault();
 
   try {
-  const res = await axios.post( "http://localhost:8080/student",student );
+  const res = await axios.post( "http://localhost:8081/student",student );
 
       console.log("Response:", res.data);
 

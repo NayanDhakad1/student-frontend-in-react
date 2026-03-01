@@ -13,7 +13,7 @@ function Otp() {
   // SEND OTP
   const sendOtp = async () => {
     try {
-      const response = await fetch("http://localhost:8080/Otp/send", {
+      const response = await fetch("http://localhost:8081/Otp/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email })
@@ -30,7 +30,7 @@ function Otp() {
   // VERIFY OTP
   const verifyOtp = async () => {
     try {
-      const response = await fetch("http://localhost:8080/Otp/verify", {
+      const response = await fetch("http://localhost:8081/Otp/verify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

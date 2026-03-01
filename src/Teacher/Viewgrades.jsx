@@ -8,7 +8,7 @@ const ViewGrades = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:8080/register/all")
+    axios.get("http://localhost:8081/register/all")
       .then((res) => {
         setGrades(res.data);
       })

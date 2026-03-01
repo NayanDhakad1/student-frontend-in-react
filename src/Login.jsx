@@ -18,10 +18,11 @@ function Login() {
     e.preventDefault();
 
     const data = { name, password };
+    console.log("sending login data", data);
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/login",
+        "http://localhost:8081/api/login",
         data
       );
 
@@ -32,7 +33,13 @@ function Login() {
         alert("Invalid Name or Password");
       }
     } catch (error) {
-      alert("Login Failed");
+      // show server validation error if available
+      if (error.response) {
+        console.error("backend error", error.response.data);
+        alert("Login failed: " + JSON.stringify(error.response.data));
+      } else {
+        alert("Login Failed: " + error.message);
+      }
     }
   };
 

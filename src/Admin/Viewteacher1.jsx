@@ -9,7 +9,7 @@ const Viewteacher1 = () => {
 
   useEffect(() => {
     axios
-      axios.get(`http://localhost:8080/register/id/${id}`)
+      axios.get(`http://localhost:8081/register/id/${id}`)
 
       .then((res) => {
         setTeacher(res.data);
