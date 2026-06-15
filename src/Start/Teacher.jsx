@@ -43,24 +43,8 @@ const Teacher = () => {
           Registration Teacher
         </Link>
 
-        <Link to="/timetable" style={cardStyle}>
+        <Link to="/createtimetable" style={cardStyle}>
           Timetable
-        </Link>
-
-        <Link to="/attendance" style={cardStyle}>
-          Attendance Dashboard
-        </Link>
-
-        <Link to="/leaves" style={cardStyle}>
-          Student Leaves
-        </Link>
-
-        <Link to="/addexam" style={cardStyle}>
-          Add Exam
-        </Link>
-
-        <Link to="/viewgrades" style={cardStyle}>
-          View Grades
         </Link>
 
         
@@ -68,7 +52,7 @@ const Teacher = () => {
         Student Details
         </Link>
 
-        <Link to="/project" style={cardStyle}>
+        <Link to="/assignments" style={cardStyle}>
           View Assignments
         </Link>
 

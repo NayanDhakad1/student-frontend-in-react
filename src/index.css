@@ -30,7 +30,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: #3b82f6;
+  color: hsl(217, 12%, 79%);
 }
 
 /* Main content */

@@ -1,49 +1,50 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { api } from "../api/axios";
 
 const Editteacher1 = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const [student, setStudent] = useState({
+  const [teacher, setTeacher] = useState({
     name: "",
     mobile: "",
-    course: "",
-    branch: "",
+    email: "",
+    subject: "",
+    address: "",
   });
 
-  // ---------- GET single student ----------
+  // ---------- GET single teacher ----------
   useEffect(() => {
-    axios
-      .get(`http://localhost:8080/register/id/${id}`)
-      .then((res) => setStudent(res.data))
-      .catch(() => alert("Student not found"));
+    api
+      .get(`/register/id/${id}`)
+      .then((res) => setTeacher(res.data))
+      .catch(() => alert("Teacher not found"));
   }, [id]);
 
   const handleChange = (e) => {
-    setStudent({ ...student, [e.target.name]: e.target.value });
+    setTeacher({ ...teacher, [e.target.name]: e.target.value });
   };
 
-  // ----------- UPDATE student ------------
-  const updateStudent = () => {
-    axios
-      .put(`http://localhost:8080/student/id/${id}`, student)
+  // ----------- UPDATE teacher ------------
+  const updateTeacher = () => {
+    api
+      .put(`/register/id/${id}`, teacher)
       .then(() => {
-        alert("Student Updated");
-        navigate("/");
+        alert("Teacher Updated Successfully");
+        navigate("/viewteacher"); // apna route check kar lena
       })
       .catch(() => alert("Update Failed"));
   };
 
   return (
     <div className="container mt-5">
-      <h2>Edit Student</h2>
+      <h2>Edit Teacher</h2>
 
       <input
         className="form-control mt-2"
         name="name"
-        value={student.name}
+        value={teacher.name}
         onChange={handleChange}
         placeholder="Name"
       />
@@ -51,28 +52,36 @@ const Editteacher1 = () => {
       <input
         className="form-control mt-2"
         name="mobile"
-        value={student.mobile}
+        value={teacher.mobile}
         onChange={handleChange}
         placeholder="Mobile"
       />
 
       <input
         className="form-control mt-2"
-        name="course"
-        value={student.course}
+        name="email"
+        value={teacher.email}
         onChange={handleChange}
-        placeholder="Course"
+        placeholder="Email"
       />
 
       <input
         className="form-control mt-2"
-        name="branch"
-        value={student.branch}
+        name="subject"
+        value={teacher.subject}
         onChange={handleChange}
-        placeholder="Branch"
+        placeholder="Subject"
       />
 
-      <button onClick={updateStudent} className="btn btn-success mt-3">
+      <input
+        className="form-control mt-2"
+        name="address"
+        value={teacher.address}
+        onChange={handleChange}
+        placeholder="Address"
+      />
+
+      <button onClick={updateTeacher} className="btn btn-success mt-3">
         Save
       </button>
     </div>

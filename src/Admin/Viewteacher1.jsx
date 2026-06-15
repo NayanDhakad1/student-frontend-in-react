@@ -1,65 +1,72 @@
-import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import { api } from "../api/axios";
 
 const Viewteacher1 = () => {
-  const { id } = useParams(); // URL se id milegi
+  const { id } = useParams();
   const [teacher, setTeacher] = useState(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    axios
-      axios.get(`http://localhost:8080/register/id/${id}`)
-
-      .then((res) => {
-        setTeacher(res.data);
-        setError("");
-      })
-      .catch(() => {
-        setTeacher(null);
-        setError("Teacher Not Found");
-      });
+    fetchTeacher();
   }, [id]);
+
+  const fetchTeacher = async () => {
+    try {
+      const res = await api.get(`/register/id/${id}`);
+      setTeacher(res.data);
+      setError("");
+    } catch (err) {
+      setTeacher(null);
+      setError("Teacher Not Found");
+    }
+  };
+
+  const thStyle = {
+    fontWeight: "bold",
+    color: "#000",
+    backgroundColor: "#f1f1f1",
+    width: "200px"
+  };
 
   return (
     <div className="container mt-4">
-      <h2>Teacher Details</h2>
-      
+      <h2 className="mb-4">Teacher Details</h2>
+
       {error && <p className="text-danger">{error}</p>}
 
-      {register/id && (
-        <table className="table table-bordered mt-3">
+      {teacher && (
+        <table className="table table-bordered bg-white shadow">
           <tbody>
             <tr>
-              <th>ID</th>
-              <td>{register.id}</td>
+              <th style={thStyle}>ID</th>
+              <td>{teacher.id}</td>
             </tr>
             <tr>
-              <th>Name</th>
-              <td>{register.name}</td>
+              <th style={thStyle}>Name</th>
+              <td>{teacher.name}</td>
             </tr>
             <tr>
-              <th>Mobile</th>
-              <td>{register.mobile}</td>
-            </tr>
-             <tr>
-              <th>Email</th>
-              <td>{register.email}</td>
-            </tr>
-
-            <tr>
-              <th>Course</th>
-              <td>{register.course}</td>
+              <th style={thStyle}>Mobile</th>
+              <td>{teacher.mobile}</td>
             </tr>
             <tr>
-              <th>Branch</th>
-              <td>{register.branch}</td>
+              <th style={thStyle}>Email</th>
+              <td>{teacher.email}</td>
+            </tr>
+            <tr>
+              <th style={thStyle}>Subject</th>
+              <td>{teacher.subject}</td>
+            </tr>
+            <tr>
+              <th style={thStyle}>Address</th>
+              <td>{teacher.address}</td>
             </tr>
           </tbody>
         </table>
       )}
 
-      <Link to="/allstudents" className="btn btn-secondary mt-3">
+      <Link to="/admin" className="btn btn-secondary mt-3">
         Back
       </Link>
     </div>

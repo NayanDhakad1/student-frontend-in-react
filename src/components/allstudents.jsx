@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { api } from "../api/axios";
 
 import Navbar from "../components/Navbar";
+import HomeNav from "../Start/HomeNav";
 
 
 const AllStudents = () => {
@@ -35,6 +36,8 @@ const AllStudents = () => {
   };
 
   return (
+    <>
+    <HomeNav/>
     <div className="container mt-4">
       <table className="table table-dark">
         <thead>
@@ -85,12 +88,11 @@ const AllStudents = () => {
           ))}
         </tbody>
       </table>
-
-
-      <Link to="/teacher" className="btn btn-secondary mt-3">
-              Back Teacher Dashbord
-            </Link>
+      <Link to="/teacher" className="btn btn-secondary mt-3">Back Teacher Dashbord</Link>
+      <br/>
+      <Link to="/admin" className="btn btn-secondary mt-3">  Back Admin Dashbord</Link>
     </div>
+    </>
   );
 };
 

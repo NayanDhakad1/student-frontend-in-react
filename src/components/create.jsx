@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import HomeNav from "../Start/HomeNav";
 
   const CreateStudent = () => {
   const navigate = useNavigate();
@@ -33,6 +34,8 @@ import { useNavigate, Link } from "react-router-dom";
   };
 
   return (
+    <>
+    <HomeNav/>
     <div
       style={{
         minHeight: "100vh",
@@ -53,7 +56,7 @@ import { useNavigate, Link } from "react-router-dom";
         }}
       >
         <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
-          Create Student
+          Registration
         </h2>
 
         <form onSubmit={handleSubmit}>
@@ -96,7 +99,7 @@ import { useNavigate, Link } from "react-router-dom";
         </form>
 
         <Link
-          to="/homenav"
+          to="/student"
           style={{
             display: "block",
             textAlign: "center",
@@ -109,6 +112,7 @@ import { useNavigate, Link } from "react-router-dom";
         </Link>
       </div>
     </div>
+    </>
   );
 };
 

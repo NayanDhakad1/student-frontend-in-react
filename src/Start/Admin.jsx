@@ -36,10 +36,9 @@ const Admin = () => {
       }}>
          <Link to="/registeacher" style={cardStyle}>Register Teacher</Link>
          <Link to="/viewteacher" style={cardStyle}>View Teacher</Link>
-        <Link to="/viewstudents" style={cardStyle}>View Students</Link>
+        <Link to="/allstudents" style={cardStyle}>View Students</Link>
         <Link to="/assignments" style={cardStyle}>View Assignments</Link>
-        <Link to="/viewexam" style={cardStyle}>View Exams</Link>
-         <Link to="/adminlogout" style={cardStyle}>Logout</Link>
+        <Link to="/createtimetable" style={cardStyle}>Create Timetable</Link>
       </div>
 
     </div>
