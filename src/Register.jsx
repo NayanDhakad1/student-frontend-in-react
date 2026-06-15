@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./styles/Auth.css";
-import "./styles/Navbar.css";
+import "./Styles/Auth.css";
+import "./Styles/Navbar.css";
 import { Link } from "react-router-dom";
 import HomeNav from "./Start/HomeNav";
 

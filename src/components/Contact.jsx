@@ -1,6 +1,6 @@
 import React from "react";
 import HomeNav from "../Start/HomeNav";
-import "../styles/Contact.css";
+import "../Styles/Contact.css";
 
 const Contact = () => {
   // Replace these with your Google Form IDs

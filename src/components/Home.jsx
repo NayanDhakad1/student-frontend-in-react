@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HomeNav from "../Start/HomeNav";
-import "../styles/Home.css";
+import "../Styles/Home.css";
 
 function Home() {
   return (

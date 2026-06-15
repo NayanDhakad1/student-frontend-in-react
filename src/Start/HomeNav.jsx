@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import "../styles/Navbar.css";
+import "../Styles/Navbar.css";
 
 import { FaBars, FaTimes } from "react-icons/fa";
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../styles/CreateTimetable.css";
+import "../Styles/CreateTimetable.css";
 import { Link } from "react-router-dom";
 import HomeNav from "../Start/HomeNav";
  

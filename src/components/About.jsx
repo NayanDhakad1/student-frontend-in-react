@@ -1,6 +1,6 @@
 import React from "react";
 import HomeNav from "../Start/HomeNav";
-import "../styles/About.css";
+import "../Styles/About.css";
 
 const About = () => {
   return (
