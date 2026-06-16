@@ -23,7 +23,7 @@ const CreateTimetable = () => {
   };
 
   const fetchData = async () => {
-    const res = await axios.get("http://localhost:8081/Createtimetable/showall");
+    const res = await axios.get("http://localhost:8080/Createtimetable/showall");
     setData(res.data);
   };
 
@@ -36,13 +36,13 @@ const CreateTimetable = () => {
 
     if (editId) {
       await axios.put(
-        `http://localhost:8081/Createtimetable/update/${editId}`,
+        `http://localhost:8080/Createtimetable/update/${editId}`,
         timetable
       );
       setEditId(null);
     } else {
       await axios.post(
-        "http://localhost:8081/Createtimetable/add",
+        "http://localhost:8080/Createtimetable/add",
         timetable
       );
     }
@@ -64,7 +64,7 @@ const CreateTimetable = () => {
 
   const handleDelete = async (id) => {
     await axios.delete(
-      `http://localhost:8081/Createtimetable/delete/${id}`
+      `http://localhost:8080/Createtimetable/delete/${id}`
     );
     fetchData();
   };

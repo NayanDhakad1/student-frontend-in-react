@@ -6,7 +6,7 @@ const ViewAllAssignments = () => {
   const [assignments, setAssignments] = useState([]);
   const [error, setError] = useState("");
 
-  const URL = "http://localhost:8081/assignment";
+  const URL = "http://localhost:8080/assignment";
 
   useEffect(() => {
     axios.get(URL)

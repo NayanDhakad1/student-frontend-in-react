@@ -12,7 +12,7 @@ const StudentViewTimetable = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://localhost:8081/Createtimetable/showall");
+      const res = await axios.get("http://localhost:8080/Createtimetable/showall");
       setTimetable(res.data);
     } catch (error) {
       console.log(error);

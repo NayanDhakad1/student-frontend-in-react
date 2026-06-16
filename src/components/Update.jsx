@@ -16,7 +16,7 @@ const Update = () => {
   // ---------- GET single student ----------
   useEffect(() => {
     axios
-      .get(`http://localhost:8081/student/id/${id}`)
+      .get(`http://localhost:8080/student/id/${id}`)
       .then((res) => setStudent(res.data))
       .catch(() => alert("Student not found"));
   }, [id]);
@@ -28,7 +28,7 @@ const Update = () => {
   // ----------- UPDATE student ------------
   const updateStudent = () => {
     axios
-      .put(`http://localhost:8081/student/id/${id}`, student)
+      .put(`http://localhost:8080/student/id/${id}`, student)
       .then(() => {
         alert("Student Updated");
         navigate("/");

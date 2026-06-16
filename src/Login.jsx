@@ -15,7 +15,7 @@ function Login() {
     e.preventDefault(); // prevent default reload
 
     try {
-      const response = await axios.post("http://localhost:8081/api/login", { name, password });
+      const response = await axios.post("http://localhost:8080/api/login", { name, password });
 
       if (response.status === 200 && response.data) {
         localStorage.setItem("isLogin", "true");

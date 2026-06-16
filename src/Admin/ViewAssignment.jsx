@@ -15,7 +15,7 @@ const ViewAssignment = () => {
 
   const [editing, setEditing] = useState(false);
 
-  const URL = "http://localhost:8081/assignment";
+  const URL = "http://localhost:8080/assignment";
 
   // 🔹 GET ALL
   const fetchAssignments = () => {

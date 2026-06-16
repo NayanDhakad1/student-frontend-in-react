@@ -14,7 +14,7 @@ const View = () => {
   const fetchStudent = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8081/student/id/${id}`
+        `http://localhost:8080/student/id/${id}`
       );
       setStudent(res.data);
       setError("");

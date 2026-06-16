@@ -26,7 +26,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:8081/api/add", register);
+      await axios.post("http://localhost:8080/api/add", register);
       alert("Registered Successfully");
       navigate("/otp");
     } catch (error) {
