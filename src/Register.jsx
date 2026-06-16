@@ -26,7 +26,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:8080/api/add", register);
+      await axios.post("https://student-api-in-spring-boot-5.onrender.com/api/add", register);
       alert("Registered Successfully");
       navigate("/otp");
     } catch (error) {
