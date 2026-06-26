@@ -12,7 +12,7 @@ function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // prevent default reload
+    e.preventDefault();
 
     try {
       const response = await axios.post("https://student-api-in-spring-boot-5.onrender.com/api/login", { name, password });
@@ -20,7 +20,7 @@ function Login() {
       if (response.status === 200 && response.data) {
         localStorage.setItem("isLogin", "true");
         localStorage.setItem("name", response.data.name);
-        navigate("/admin"); // simple redirect
+        navigate("/admin");
       } else {
         alert("Invalid Name or Password");
       }
@@ -60,17 +60,23 @@ function Login() {
           <form onSubmit={handleSubmit}>
             <input
               type="text"
+              id="name"
+              name="name"
               placeholder="Enter Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              autoComplete="username"
               required
             />
 
             <input
               type="password"
+              id="password"
+              name="password"
               placeholder="Enter Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              autoComplete="current-password"
               required
             />
 

@@ -30,7 +30,7 @@ function Otp() {
   // VERIFY OTP
   const verifyOtp = async () => {
     try {
-      const response = await fetch("/Otp/verify", {
+      const response = await fetch("https://student-api-in-spring-boot-5.onrender.com/Otp/verify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
