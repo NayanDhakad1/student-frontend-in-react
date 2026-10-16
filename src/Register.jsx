@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Styles/Auth.css";
 import "./Styles/Navbar.css";
-import { Link } from "react-router-dom";
 import HomeNav from "./Start/HomeNav";
 
 function Register() {
@@ -19,96 +18,131 @@ function Register() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setRegister({ ...register, [name]: value });
+
+    setRegister({
+      ...register,
+      [name]: value
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      await axios.post("https://student-api-in-spring-boot-5.onrender.com/api/add", register);
+      console.log("Sending data:", register);
+
+      const response = await axios.post(
+        "https://student-api-in-spring-boot-5.onrender.com/api/add",
+        register
+      );
+
+      console.log("Server response:", response.data);
+
       alert("Registered Successfully");
-      navigate("/otp");
+
+      // OTP verification disabled
+      // navigate("/otp");
+
+      navigate("/login");
+
     } catch (error) {
-      alert("Registration Failed");
+      console.error("Registration Error:", error);
+
+      if (error.response) {
+        alert(
+          "Registration Failed\nStatus: " +
+          error.response.status +
+          "\nMessage: " +
+          JSON.stringify(error.response.data)
+        );
+      } else {
+        alert("Registration Failed: " + error.message);
+      }
     }
   };
 
   return (
-<>
-<h1
-  style={{
-    position: "fixed",
-    top: "0",
-    left: "0",
-    width: "100%",
-    margin: "0",
-    padding: "18px 0",
-    textAlign: "center",
-    backgroundColor: "hsl(20, 2%, 73%)",
-    color: "ActiveBorder",
-    fontSize: "28px",
-    fontWeight: "600",
-    letterSpacing: "1px",
-    zIndex: "1000"
-  }}
->
-  Student Management System
-</h1>
+    <>
+      <h1
+        style={{
+          position: "fixed",
+          top: "0",
+          left: "0",
+          width: "100%",
+          margin: "0",
+          padding: "18px 0",
+          textAlign: "center",
+          backgroundColor: "hsl(20, 2%, 73%)",
+          color: "ActiveBorder",
+          fontSize: "28px",
+          fontWeight: "600",
+          letterSpacing: "1px",
+          zIndex: "1000"
+        }}
+      >
+        Student Management System
+      </h1>
 
-<HomeNav/>
+      <HomeNav />
 
-<div className="auth-container">
-  <div className="auth-card">
-    <h2>Register</h2>
+      <div className="auth-container">
+        <div className="auth-card">
 
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        placeholder="Enter Name"
-        value={register.name}
-        onChange={handleChange}
-        required
-      />
+          <h2>Register</h2>
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Enter Email"
-        value={register.email}
-        onChange={handleChange}
-        required
-      />
+          <form onSubmit={handleSubmit}>
 
-      <input
-        type="password"
-        name="password"
-        placeholder="Enter Password"
-        value={register.password}
-        onChange={handleChange}
-        required
-      />
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter Name"
+              value={register.name}
+              onChange={handleChange}
+              required
+            />
 
-     
-      <button type="submit">Register</button>
-    </form>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter Email"
+              value={register.email}
+              onChange={handleChange}
+              required
+            />
 
-    <span
-      className="auth-link"
-      onClick={() => navigate("/login")}
-    >
-      Already have an account? Login
-    </span>
-    
-  <Link to="/otp" className="btn btn-secondary mt-3">
-        Back
-  </Link>
-  </div>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter Password"
+              value={register.password}
+              onChange={handleChange}
+              required
+            />
 
-</div>
+            <button type="submit">
+              Register
+            </button>
 
-</>
+          </form>
+
+          <span
+            className="auth-link"
+            onClick={() => navigate("/login")}
+          >
+            Already have an account? Login
+          </span>
+
+          {/* OTP disabled: Back now goes to home */}
+          <Link
+            to="/"
+            className="btn btn-secondary mt-3"
+          >
+            Back
+          </Link>
+
+        </div>
+      </div>
+    </>
   );
 }
 

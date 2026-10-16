@@ -1,3 +1,4 @@
+/*
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -84,12 +85,13 @@ function Otp() {
       <br /><br />
 
       <h3>{message}</h3>
-      
+
       <Link to="/" className="btn btn-secondary mt-3">
-              Back
-            </Link>
+        Back
+      </Link>
     </div>
   );
 }
 
 export default Otp;
+*/
